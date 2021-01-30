@@ -2,7 +2,7 @@ import unittest
 from ..sliding_window_min import sliding_window_min
 
 
-class TestDeque(unittest.TestCase):
+class TestSlidingWindow(unittest.TestCase):
     def test_case_1(self):
         test_a, test_k = [1, 3, 4, 5, 2, 7], 3
         self.assertEqual(sliding_window_min(test_a, test_k), [1, 3, 2, 2])
