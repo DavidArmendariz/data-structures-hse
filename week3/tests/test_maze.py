@@ -40,7 +40,16 @@ class TestMaze(unittest.TestCase):
     def test_weighted_escape_length_case_3(self):
         self.assertEqual(weighted_escape_length(test_b, 2), 6)
 
-    def weighted_escape_case_1(self):
+    def test_weighted_escape_case_1(self):
+        result = weighted_escapes(test_b, 0)
+        self.assertEqual(result, [[(0, 0), (1, 0), (1, 1), (1, 2), (2, 2)]])
+
+    def test_weighted_escape_case_2(self):
         self.assertEqual(
-            weighted_escapes(test_b, 0), [[(0, 0), (1, 0), (1, 1), (1, 2), (2, 2)]]
+            weighted_escapes(test_b, 2),
+            [
+                [(0, 0), (1, 0), (2, 0), (2, 1), (2, 2)],
+                [(0, 0), (0, 1), (1, 1), (2, 1), (2, 2)],
+                [(0, 0), (0, 1), (0, 2), (1, 2), (2, 2)],
+            ],
         )
